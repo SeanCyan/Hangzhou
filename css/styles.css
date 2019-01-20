@@ -1,0 +1,320 @@
+body {
+    color: white;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* navbar */
+
+.navbar {
+    font-size: 18px;
+    padding-bottom: 10px;
+    position: relative;
+    top: 0;
+}
+
+.main-nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.800);
+    background-color: rgba(0, 0, 0, 0.13);
+}
+
+.main-nav li {
+    padding: 0 20px;
+    color: rgba(255, 255, 255, 0.800);
+}
+
+.main-nav li:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+@media all and (min-width: 768px) {
+
+.navbar {
+    position: absolute;
+    width: 35%;
+    right: 0%;
+}
+
+.main-nav {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+}
+
+@media all and (min-width: 1200px) {
+
+.navbar {
+    width: 25%;
+}    
+
+}
+
+/* Background Image */
+
+.paralax {
+    position: relative;
+    background-image: url('../img/Hangzhou6.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: 5%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+@media all and (min-width: 768px) {
+
+.paralax {
+    background-position: center;
+    }
+}
+
+/* tagline */
+
+.tagline {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.intro-sub {
+    padding: 10px 0;
+    font-size: 2em;
+}
+
+.intro-main {
+    font-size: 3em;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.intro_text {
+    display: none;
+}
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:1s;
+  }
+
+  .fade-in.intro-sub {
+    animation-delay: 0.5s;
+  }
+
+  .fade-in.intro-text {
+    animation-delay: 0.5s;
+  }
+
+  .fade-in.intro-main {
+    animation-delay: 1.5s;
+  }
+
+@media all and (min-width: 768px) {
+
+.intro-main {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    letter-spacing: 50px;
+    text-indent: 50px;
+}
+
+.intro_text {
+    display: block;
+    font-size: 1.15em;
+    text-transform: uppercase;
+}
+    
+}
+
+@media all and (min-width: 1200px) {
+
+.intro-main {
+    font-size: 4em;
+}
+
+}
+
+/* social media */
+
+.social_media {
+    display: none;
+}
+
+@media all and (min-width: 768px) {
+
+.social_media {
+    display: inline;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 10px 30px;
+}
+
+.social_media a {
+    color: rgba(255, 255, 255, 0.801);
+    padding: 0 20px;
+}
+
+.social_media a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.social_media a:link {
+    text-decoration: none;
+}
+
+}
+
+/* modal */
+
+.modal_container {
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    opacity: 0;
+    background-image: url('../img/lanterns-m.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid rgba(255, 255, 255, 0.788);
+    animation:pop_up ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:0.5s;
+}
+
+.modal {
+    width: 80%;
+    height: 70%;
+    margin: 50% auto;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    right: 5px; top: 5px;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    transition: 0.2s ease-in;
+}
+
+.close:hover {
+    color: rgb(255, 0, 76);
+    cursor: pointer;
+}
+
+.modal h3 {
+    font-size: 1.75em;
+}
+
+.modal p {
+    font-size: 1.25em;
+    width: 70%;
+    margin: 20px auto 0;
+}
+
+.modal input {
+    display: block;
+    width: 70%;
+    margin: 20px auto 0;
+    height: 30px;
+    padding: 0 0 0 5px;
+}
+
+.modal button {
+    margin: 20px auto;
+    border: none;
+    height: 30px;
+    width: 70%;
+    background-color: rgba(255, 0, 64, 0.753);
+    color: white;
+    padding: 0;
+}
+
+.modal button:hover {
+    background-color: rgb(255, 0, 64);
+    cursor: pointer;
+}
+
+@keyframes pop_up { 
+    from {
+        opacity: 0;
+    } 
+    to 
+    { 
+        opacity: 1;
+    } 
+   }
+
+.pop_up.modal_container {
+    animation-delay: 7s;
+  }
+
+@media all and (min-width: 768px) {
+
+.modal_container {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    background-position: none;
+    background-repeat: none;
+    background-size: none;
+    border: none;
+}
+
+.modal {
+    position: absolute;
+    left: 50%; bottom: 50%;
+    transform: translate(-50%, 50%); 
+    width: 600px !important;
+    height: 300px !important;
+    background-image: url('../img/lanterns.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid rgba(255, 255, 255, 0.788);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.452);
+    text-align: left;
+    margin: 0;
+}
+
+.close {
+    font-size: 1.5em;
+}
+
+.modal h3 {
+    margin: 25% 20px 0;
+    font-size: 1.25em;
+}
+
+.modal p {
+    font-size: 1em;
+    width: 60%;
+    margin: 20px 20px 0;
+}
+
+.modal input {
+    display: inline;
+    width: 40%;
+    margin: 20px 0 20px 20px;
+    height: 22px;
+}
+
+.modal button {
+    margin: 20px 20px 20px 0;
+    height: 22px;
+    width: 15%;
+}
+
+}
