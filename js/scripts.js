@@ -1,15 +1,32 @@
-const modal = document.querySelector('.modal_container');
-const input = document.querySelector('input');
 
-document.querySelector('button').addEventListener('click', function() {
-    if (input.value == '') {
-        alert('Email address field is blank!');
-        return
-    } else {
-    modal.style.display = "none";
+$(document).ready(function() {
+function timeOut() {
+    setTimeout($('.modal_container').slideDown(), 5000)
+}
+setTimeout(timeOut, 5000)
+// Exit intent
+function addEvent(obj, evt, fn) {
+    if (obj.addEventListener) {
+        obj.addEventListener(evt, fn, false);
     }
+    else if (obj.attachEvent) {
+        obj.attachEvent("on" + evt, fn);
+    }
+}
+
+// Exit intent trigger
+
+addEvent(document, 'mouseout', function(evt) {
+
+    if (evt.toElement == null && evt.relatedTarget == null) {
+        $('.modal_container').slideDown();
+    }
+
 });
 
-document.querySelector('.close').addEventListener('click', function() {
-    modal.style.display = "none";
+// Closing the Popup Box
+$('.close').click(function(){
+    $('.modal_container').slideUp();
+});
+
 });
