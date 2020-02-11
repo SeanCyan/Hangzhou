@@ -233,6 +233,7 @@ body {
     width: 70%;
     margin: 20px auto 0;
     height: 30px;
+    text-indent: 10px;
 }
 
 .modal button {

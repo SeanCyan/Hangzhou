@@ -29,4 +29,12 @@ $('.close').click(function(){
     $('.modal_container').slideUp();
 });
 
+$('#modalTextBox button').click(function(){
+    if (!$('#modalTextBox input').val()) {
+        alert('Please enter an email address!');
+    } else {
+        $('.modal_container').slideUp();
+    }
+})
+
 });
